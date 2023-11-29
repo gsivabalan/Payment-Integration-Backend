@@ -34,9 +34,7 @@ app.post("/api/create-checkout-session",async(req,res)=>{
 
     res.json({id:session.id})
  
-})
-
-
+}) 
 app.listen(7000,()=>{
     console.log("server started")
 })
