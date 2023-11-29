@@ -10,7 +10,7 @@ app.use(cors());
 // checkout api
 app.post("/api/create-checkout-session",async(req,res)=>{
     const {products} = req.body;
-
+console.log("API working");
 
     const lineItems = products.map((product)=>({
         price_data:{
