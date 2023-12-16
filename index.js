@@ -5,7 +5,15 @@ const cors = require("cors");
 const stripe = require("stripe")('sk_test_51OHPdLSFPY3jFCnp0nvSfhmmfkz76wYUMSQUO9yjeOujMeYq2szm5JjZoCCuZUY9K00U9NncSamBIDbsgs0SheW700DBUk1H0h');
 
 app.use(express.json());
-app.use(cors());
+
+const corsOptions = {
+    origin: "http://localhost:3000", // Replace this with the actual origin of your frontend application
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    credentials: true,
+    optionsSuccessStatus: 204,
+  };
+  
+  app.use(cors(corsOptions));
 
 // checkout api
 app.post("/api/create-checkout-session",async(req,res)=>{
