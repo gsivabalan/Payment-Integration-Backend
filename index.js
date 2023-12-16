@@ -5,9 +5,8 @@ const cors = require("cors");
 const stripe = require("stripe")('sk_test_51OHPdLSFPY3jFCnp0nvSfhmmfkz76wYUMSQUO9yjeOujMeYq2szm5JjZoCCuZUY9K00U9NncSamBIDbsgs0SheW700DBUk1H0h');
 
 app.use(express.json());
-
 const corsOptions = {
-    origin: "http://localhost:3000", // Replace this with the actual origin of your frontend application
+    origin: "https://payment-integration-4587e3.netlify.app/", // Replace this with the actual origin of your frontend application
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials: true,
     optionsSuccessStatus: 204,
