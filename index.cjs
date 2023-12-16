@@ -1,7 +1,7 @@
-// Importing modules using ESM syntax
-import express from "express";
-import cors from "cors";
-import stripe from "stripe";
+// Importing modules using CommonJS syntax
+const express = require("express");
+const cors = require("cors");
+const stripe = require("stripe");
 
 // Initializing Stripe with your secret key
 const stripeSecretKey = 'sk_test_51OHPdLSFPY3jFCnp0nvSfhmmfkz76wYUMSQUO9yjeOujMeYq2szm5JjZoCCuZUY9K00U9NncSamBIDbsgs0SheW700DBUk1H0h';
