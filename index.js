@@ -13,17 +13,19 @@ const app = express();
 
 // Configuring CORS
 const corsOptions = {
-    origin: "https://payment-integration-4587e3.netlify.app/",
-    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    origin: ["*"],
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE,",
     credentials: true,
-    optionsSuccessStatus: 204,
+    optionsSuccessStatus: 200,
 };
-app.use(cors(corsOptions));
-
+app.use(cors());
+app.use(express.json());
+//app.use(cors(corsOptions));
 // Checkout API endpoint
-app.post("/api/create-checkout-session", async (req, res) => {
-    const { products } = req.body;
 
+app.post("/", async (req, res) => {
+    const { products } = req.body;
+    
     // Creating line items for the checkout session
     const lineItems = products.map((product) => ({
         price_data: {
@@ -55,3 +57,4 @@ const PORT = 7000;
 app.listen(PORT, () => {
     console.log(`Server started on port ${PORT}`);
 });
+
